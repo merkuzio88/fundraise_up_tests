@@ -17,7 +17,7 @@ public class ContactSalesPage {
         return this;
     }
 
-    @Step("Check contact sales page talk to sales button")
+    @Step("Check talk to sales button")
     public ContactSalesPage checkTalkToSalesButton() {
         talkToSalesButton.shouldBe(visible);
         return this;

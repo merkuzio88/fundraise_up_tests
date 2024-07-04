@@ -46,9 +46,9 @@ tasks.withType(Test) {
     }
 }
 
-task automacon_tests(type: Test) {
+task ui_test(type: Test) {
     useJUnitPlatform {
-        includeTags("automacon_tests")
+        includeTags("ui_test")
     }
 }
 

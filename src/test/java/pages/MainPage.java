@@ -9,6 +9,8 @@ import static com.codeborne.selenide.Selenide.open;
 public class MainPage {
 
     private final SelenideElement talkToSalesButton = $(".btn.btn-primary");
+    private final SelenideElement featuresButton = $(".btn[href='/features/']");
+
 
     @Step("Open main page")
     public MainPage openMainPage() {
@@ -19,6 +21,12 @@ public class MainPage {
     @Step("Open contact sales page")
     public MainPage openContactSalesPage() {
         talkToSalesButton.click();
+        return this;
+    }
+
+    @Step("Open features page")
+    public MainPage openFeaturesPage() {
+        featuresButton.click();
         return this;
     }
 }
