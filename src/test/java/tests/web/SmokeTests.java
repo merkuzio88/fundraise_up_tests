@@ -4,10 +4,7 @@ import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import pages.CampaignPagesPage;
-import pages.ContactSalesPage;
-import pages.FeaturesPage;
-import pages.MainPage;
+import pages.*;
 
 public class SmokeTests extends TestBase {
 
@@ -15,6 +12,7 @@ public class SmokeTests extends TestBase {
     ContactSalesPage contactSalesPage = new ContactSalesPage();
     FeaturesPage featuresPage = new FeaturesPage();
     CampaignPagesPage campaignPagesPage = new CampaignPagesPage();
+    LoginPage loginPage = new LoginPage();
 
     @Test
     @Severity(SeverityLevel.BLOCKER)
@@ -42,5 +40,14 @@ public class SmokeTests extends TestBase {
     void checkFaqTextsDisplayOnCampaignPagesTest() {
         campaignPagesPage.openCampaignPagesPage()
                 .checkFaqHiddenTextDisplay();
+    }
+
+    @Test
+    @Severity(SeverityLevel.CRITICAL)
+    @DisplayName("Check error message with unsuccessful login attempt")
+    void checkErrorMessageWithUnsuccessfulLoginAttempt() {
+        loginPage.openLoginPage()
+                .fillRandomDataAndSubmitAttempt()
+                .checkErrorMessageWithUnsuccessfulLogin();
     }
 }
