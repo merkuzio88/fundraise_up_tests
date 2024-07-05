@@ -3,7 +3,8 @@ package helpers;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
-import org.junit.jupiter.api.Assertions;
+
+import static org.assertj.core.api.Assertions.*;
 
 public class UiHelpers {
 
@@ -13,13 +14,13 @@ public class UiHelpers {
         while (!controlElement.is(condition) && attempts < maxAttempts) {
             baseElement.scrollIntoView(true).click();
             attempts++;
-            Selenide.sleep(500);
+            Selenide.sleep(1000);
             if (controlElement.is(condition)) {
                 System.out.printf("Element %s became %s after %d click attempts", controlElement, condition, attempts);
             }
         }
         if (!controlElement.is(condition)) {
-            Assertions.fail(String.format("Element %s is not %s after %d click attempts", controlElement, condition, maxAttempts));
+            fail("Element %s is not %s after %d click attempts", controlElement, condition, maxAttempts);
         }
     }
 }

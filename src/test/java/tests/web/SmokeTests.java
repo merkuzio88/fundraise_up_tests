@@ -1,10 +1,12 @@
 package tests.web;
 
 import io.qameta.allure.Severity;
-import io.qameta.allure.SeverityLevel;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import pages.*;
+
+import static io.qameta.allure.SeverityLevel.BLOCKER;
+import static io.qameta.allure.SeverityLevel.CRITICAL;
 
 public class SmokeTests extends TestBase {
 
@@ -13,9 +15,11 @@ public class SmokeTests extends TestBase {
     FeaturesPage featuresPage = new FeaturesPage();
     CampaignPagesPage campaignPagesPage = new CampaignPagesPage();
     LoginPage loginPage = new LoginPage();
+    LanguagesPage languagesPage = new LanguagesPage();
+    DocsChangelogPage docsChangelogPage = new DocsChangelogPage();
 
     @Test
-    @Severity(SeverityLevel.BLOCKER)
+    @Severity(BLOCKER)
     @DisplayName("Open contact sales page and check title and talk to sales button")
     void openContactSalesPageAndCheckTitleAndButtonTest() {
         mainPage.openMainPage()
@@ -25,7 +29,7 @@ public class SmokeTests extends TestBase {
     }
 
     @Test
-    @Severity(SeverityLevel.BLOCKER)
+    @Severity(BLOCKER)
     @DisplayName("Open features page and check title and explore campaign link")
     void openFeaturesPageAndCheckTitleAndLinkTest() {
         mainPage.openMainPage()
@@ -35,7 +39,7 @@ public class SmokeTests extends TestBase {
     }
 
     @Test
-    @Severity(SeverityLevel.CRITICAL)
+    @Severity(CRITICAL)
     @DisplayName("Check FAQ text display on campaign pages page")
     void checkFaqTextsDisplayOnCampaignPagesTest() {
         campaignPagesPage.openCampaignPagesPage()
@@ -43,11 +47,27 @@ public class SmokeTests extends TestBase {
     }
 
     @Test
-    @Severity(SeverityLevel.CRITICAL)
+    @Severity(CRITICAL)
     @DisplayName("Check error message with unsuccessful login attempt")
     void checkErrorMessageWithUnsuccessfulLoginAttempt() {
         loginPage.openLoginPage()
                 .fillRandomDataAndSubmitAttempt()
                 .checkErrorMessageWithUnsuccessfulLogin();
+    }
+
+    @Test
+    @Severity(CRITICAL)
+    @DisplayName("Check that number of languages in header corresponds to number of icons")
+    void checkNumberOfLanguagesInHeaderCorrespondsToNumberOfIcons() {
+        languagesPage.openLanguagesPage()
+                .checkNumberOfLanguageIcons();
+    }
+
+    @Test
+    @Severity(CRITICAL)
+    @DisplayName("Check that successful subscribe to docs updates message equals to expected")
+    void checkSuccessfulSubscribeToDocsUpdatesMessage() {
+        docsChangelogPage.openDocsChangelogPage()
+                .checkSuccessfulSubscribeMessage();
     }
 }

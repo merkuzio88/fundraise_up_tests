@@ -9,6 +9,7 @@ repositories {
 
 def allureVersion = "2.21.0",
     selenideVersion = "6.19.1",
+        assertJVersion = "3.24.2",
         javaFakerVersion = "1.0.2"
 
 allure {
@@ -29,6 +30,7 @@ dependencies {
     runtimeOnly 'org.aspectj:aspectjweaver:1.9.22'
     testImplementation(
             "com.codeborne:selenide:$selenideVersion",
+            "org.assertj:assertj-core:$assertJVersion",
             "org.junit.jupiter:junit-jupiter:5.10.2",
             "io.qameta.allure:allure-selenide:$allureVersion",
             "com.github.javafaker:javafaker:$javaFakerVersion",
