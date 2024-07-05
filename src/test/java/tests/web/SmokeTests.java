@@ -17,6 +17,7 @@ public class SmokeTests extends TestBase {
     LoginPage loginPage = new LoginPage();
     LanguagesPage languagesPage = new LanguagesPage();
     DocsChangelogPage docsChangelogPage = new DocsChangelogPage();
+    PaypalRecurringPage paypalRecurringPage = new PaypalRecurringPage();
 
     @Test
     @Severity(BLOCKER)
@@ -69,5 +70,13 @@ public class SmokeTests extends TestBase {
     void checkSuccessfulSubscribeToDocsUpdatesMessage() {
         docsChangelogPage.openDocsChangelogPage()
                 .checkSuccessfulSubscribeMessage();
+    }
+
+    @Test
+    @Severity(CRITICAL)
+    @DisplayName("Check that successful PayPal recurring request message equals to expected")
+    void checkSuccessfulPaypalRecurringRequestMessage() {
+        paypalRecurringPage.openPaypalRecurringPage()
+                .fillRandomDataAndCheckPaypalRecurringRequestMessage();
     }
 }
