@@ -11,7 +11,7 @@ def allureVersion = "2.21.0",
     selenideVersion = "6.19.1",
         assertJVersion = "3.24.2",
         javaFakerVersion = "1.0.2",
-        lombokVersion = "1.18.32",
+        lombokVersion = "1.18.24",
         restAssuredVersion = "5.3.1"
 
 allure {
@@ -39,8 +39,10 @@ dependencies {
             "io.qameta.allure:allure-rest-assured:$allureVersion",
             "com.github.javafaker:javafaker:$javaFakerVersion",
             "org.projectlombok:lombok:$lombokVersion",
+            'com.fasterxml.jackson.core:jackson-annotations:2.16.1',
             "io.rest-assured:json-schema-validator:5.3.1",
             'org.slf4j:slf4j-simple:2.0.12',
+            'com.google.code.gson:gson:2.11.0',
             "org.aeonbits.owner:owner:1.0.12"
     )
 }

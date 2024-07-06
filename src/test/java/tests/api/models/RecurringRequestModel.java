@@ -1,15 +1,16 @@
 package tests.api.models;
 
-import io.qameta.allure.internal.shadowed.jackson.annotation.JsonIgnoreProperties;
+import io.qameta.allure.internal.shadowed.jackson.annotation.JsonProperty;
 
+import java.io.Serializable;
 import java.util.Map;
 
-@JsonIgnoreProperties(ignoreUnknown = true)
-public class RecurringRequestModel {
+public class RecurringRequestModel implements Serializable {
 
     private String sessionUuid;
     private String respondentUuid;
     private Map<String, String> responses;
+    @JsonProperty(value="isCompleted")
     private boolean isCompleted;
 
     public RecurringRequestModel() {
@@ -46,6 +47,7 @@ public class RecurringRequestModel {
         this.responses = responses;
     }
 
+    @JsonProperty(value="isCompleted")
     public boolean isCompleted() {
         return isCompleted;
     }
@@ -69,7 +71,8 @@ public class RecurringRequestModel {
         return this;
     }
 
-    public RecurringRequestModel withIsCompleted(boolean isCompleted) {
+    @JsonProperty(value="isCompleted")
+    public RecurringRequestModel withCompleted(boolean isCompleted) {
         this.isCompleted = isCompleted;
         return this;
     }

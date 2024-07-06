@@ -1,7 +1,6 @@
 package tests.api;
 
 import io.qameta.allure.Severity;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import tests.TestData;
@@ -67,7 +66,7 @@ public class SmokeTestsAPI extends TestBase {
                 .withSessionUuid(testData.randomUuid)
                 .withRespondentUuid(testData.randomUuid)
                 .withResponses(responses)
-                .withIsCompleted(true);
+                .withCompleted(true);
 
         RecurringResponseModel response = step("Send Paypal recurring request with random data", () ->
                 paypalRecurringApi.recurringResponse(requestModel));
