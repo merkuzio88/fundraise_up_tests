@@ -8,7 +8,7 @@ import pages.*;
 import static io.qameta.allure.SeverityLevel.BLOCKER;
 import static io.qameta.allure.SeverityLevel.CRITICAL;
 
-public class SmokeTests extends TestBase {
+public class SmokeTestsUI extends TestBase {
 
     MainPage mainPage = new MainPage();
     ContactSalesPage contactSalesPage = new ContactSalesPage();

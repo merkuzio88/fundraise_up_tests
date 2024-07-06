@@ -3,7 +3,7 @@ package pages;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 import org.assertj.core.api.Assertions;
-import tests.web.TestData;
+import tests.TestData;
 
 import static com.codeborne.selenide.Condition.exist;
 import static com.codeborne.selenide.Condition.visible;
