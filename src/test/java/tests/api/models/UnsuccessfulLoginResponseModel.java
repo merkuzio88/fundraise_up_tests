@@ -1,6 +1,6 @@
 package tests.api.models;
 
-import io.qameta.allure.internal.shadowed.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class UnsuccessfulLoginResponseModel {

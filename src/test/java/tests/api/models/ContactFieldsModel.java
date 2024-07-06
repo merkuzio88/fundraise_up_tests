@@ -1,6 +1,6 @@
 package tests.api.models;
 
-import io.qameta.allure.internal.shadowed.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ContactFieldsModel {
@@ -11,6 +11,14 @@ public class ContactFieldsModel {
     }
 
     public ContactFieldsModel(String email) {
+        this.email = email;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
         this.email = email;
     }
 }

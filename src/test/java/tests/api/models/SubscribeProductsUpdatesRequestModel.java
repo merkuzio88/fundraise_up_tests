@@ -1,18 +1,32 @@
 package tests.api.models;
 
-import io.qameta.allure.internal.shadowed.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class SubscribeProductsUpdatesRequestModel {
 
-    private ContactFieldsModel contactFieldsModel;
+    private ContactFieldsModel contactFields;
     private int portalId;
 
     public SubscribeProductsUpdatesRequestModel() {
     }
 
-    public void setContactFields(ContactFieldsModel contactFieldsModel) {
-        this.contactFieldsModel = contactFieldsModel;
+    @JsonProperty(value="contactFields")
+    public ContactFieldsModel getContactFieldsModel() {
+        return contactFields;
+    }
+
+    public void setContactFields(ContactFieldsModel contactFields) {
+        this.contactFields = contactFields;
+    }
+
+    public int getPortalId() {
+        return portalId;
+    }
+
+    public void setPortalId(int portalId) {
+        this.portalId = portalId;
     }
 
     public SubscribeProductsUpdatesRequestModel withPortalId(Integer portalId) {
