@@ -2,35 +2,21 @@ package tests.api.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.With;
+import lombok.experimental.Accessors;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Accessors(chain = true)
 public class SubscribeProductsUpdatesRequestModel {
 
+    @JsonProperty(value = "contactFields")
     private ContactFieldsModel contactFields;
+    @With
     private int portalId;
-
-    public SubscribeProductsUpdatesRequestModel() {
-    }
-
-    @JsonProperty(value="contactFields")
-    public ContactFieldsModel getContactFieldsModel() {
-        return contactFields;
-    }
-
-    public void setContactFields(ContactFieldsModel contactFields) {
-        this.contactFields = contactFields;
-    }
-
-    public int getPortalId() {
-        return portalId;
-    }
-
-    public void setPortalId(int portalId) {
-        this.portalId = portalId;
-    }
-
-    public SubscribeProductsUpdatesRequestModel withPortalId(Integer portalId) {
-        this.portalId = portalId;
-        return this;
-    }
 }
