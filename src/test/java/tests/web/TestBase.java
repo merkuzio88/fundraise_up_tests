@@ -27,7 +27,8 @@ public class TestBase {
         Configuration.browser = webConfig.getBrowserName();
         Configuration.browserVersion = webConfig.getBrowserVersion();
         Configuration.browserSize = webConfig.getBrowserSize();
-        Configuration.remote = webConfig.getRemoteUrl();
+        Configuration.remote = "https://user1:1234@" + System.getProperty("remote_url",
+                "selenoid.autotests.cloud") + "/wd/hub";
         Configuration.timeout = 20000;
         Configuration.pageLoadTimeout = 100000;
         Configuration.pageLoadStrategy = "eager";
