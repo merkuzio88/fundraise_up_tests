@@ -9,8 +9,8 @@ import static helpers.UiHelpers.clickWithAttempts;
 
 public class CampaignPagesPage {
 
-    private final SelenideElement faqAccordion = $("svg.d-block.J_dx path");
-    private final SelenideElement faqExpandedText = $(".J_dw.overflow-hidden[style='height: 44px; opacity: 1;']");
+    private final SelenideElement faqAccordion = $("div.p-abs.centered svg.d-block path[fill-rule='evenodd']");
+    private final SelenideElement faqExpandedText = $(".overflow-hidden[style='height: 44px; opacity: 1;']");
 
     @Step("Open campaign pages page")
     public CampaignPagesPage openCampaignPagesPage() {
