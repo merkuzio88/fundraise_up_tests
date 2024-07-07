@@ -68,17 +68,17 @@ public class SmokeTestsUI extends TestBase {
 
     @Test
     @Severity(CRITICAL)
-    @DisplayName("Check that successful subscribe to docs updates message equals to expected")
-    void checkSuccessfulSubscribeToDocsUpdatesMessage() {
-        docsChangelogPage.openDocsChangelogPage()
-                .checkSuccessfulSubscribeMessage();
-    }
-
-    @Test
-    @Severity(CRITICAL)
     @DisplayName("Check that successful PayPal recurring request message equals to expected")
     void checkSuccessfulPaypalRecurringRequestMessage() {
         paypalRecurringPage.openPaypalRecurringPage()
                 .fillRandomDataAndCheckPaypalRecurringRequestMessage();
+    }
+
+    @Test
+    @Severity(CRITICAL)
+    @DisplayName("Check that successful subscribe to docs updates message equals to expected")
+    void checkSuccessfulSubscribeToDocsUpdatesMessage() {
+        docsChangelogPage.openDocsChangelogPage()
+                .checkSuccessfulSubscribeMessage();
     }
 }

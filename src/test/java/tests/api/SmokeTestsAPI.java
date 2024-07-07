@@ -14,6 +14,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import static io.qameta.allure.Allure.step;
+import static io.qameta.allure.SeverityLevel.BLOCKER;
 import static io.qameta.allure.SeverityLevel.CRITICAL;
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -28,7 +29,7 @@ public class SmokeTestsAPI extends TestBase {
     PaypalRecurringApi paypalRecurringApi = new PaypalRecurringApi();
 
     @Test
-    @Severity(CRITICAL)
+    @Severity(BLOCKER)
     @DisplayName("Making unsuccessful login request without CSRF token")
     void unsuccessfulLoginTest() {
         LoginRequestModel loginData = new LoginRequestModel()
