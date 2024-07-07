@@ -2,12 +2,14 @@ package tests.web;
 
 import io.qameta.allure.Severity;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.*;
 
 import static io.qameta.allure.SeverityLevel.BLOCKER;
 import static io.qameta.allure.SeverityLevel.CRITICAL;
 
+@Tag("ui_tests")
 public class SmokeTestsUI extends TestBase {
 
     MainPage mainPage = new MainPage();
@@ -40,20 +42,20 @@ public class SmokeTestsUI extends TestBase {
     }
 
     @Test
-    @Severity(CRITICAL)
-    @DisplayName("Check FAQ text display on campaign pages page")
-    void checkFaqTextsDisplayOnCampaignPagesTest() {
-        campaignPagesPage.openCampaignPagesPage()
-                .checkFaqHiddenTextDisplay();
-    }
-
-    @Test
-    @Severity(CRITICAL)
+    @Severity(BLOCKER)
     @DisplayName("Check error message with unsuccessful login attempt")
     void checkErrorMessageWithUnsuccessfulLoginAttempt() {
         loginPage.openLoginPage()
                 .fillRandomDataAndSubmitAttempt()
                 .checkErrorMessageWithUnsuccessfulLogin();
+    }
+
+    @Test
+    @Severity(CRITICAL)
+    @DisplayName("Check FAQ text display on campaign pages page")
+    void checkFaqTextsDisplayOnCampaignPagesTest() {
+        campaignPagesPage.openCampaignPagesPage()
+                .checkFaqHiddenTextDisplay();
     }
 
     @Test

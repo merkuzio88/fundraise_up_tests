@@ -2,6 +2,7 @@ package tests.api;
 
 import io.qameta.allure.Severity;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import tests.TestData;
 import tests.api.api.AuthorizationApi;
@@ -16,6 +17,7 @@ import static io.qameta.allure.Allure.step;
 import static io.qameta.allure.SeverityLevel.CRITICAL;
 import static org.assertj.core.api.Assertions.assertThat;
 
+@Tag("api_tests")
 public class SmokeTestsAPI extends TestBase {
 
     private final String unsuccessfulLoginMessage = "Invalid CSRF token";

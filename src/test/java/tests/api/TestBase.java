@@ -9,7 +9,7 @@ import org.junit.jupiter.api.BeforeAll;
 public class TestBase {
 
     @BeforeAll
-    static void beforeAll() {
+    static void setUpConfig() {
         WebConfig webConfig = ConfigFactory.create(WebConfig.class, System.getProperties());
 
         RestAssured.baseURI = "https://fundraiseup.com/";

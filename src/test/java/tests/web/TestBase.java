@@ -1,7 +1,10 @@
 package tests.web;
 
+import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
+import config.WebConfig;
 import io.qameta.allure.selenide.AllureSelenide;
+import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -16,12 +19,19 @@ public class TestBase {
 
     @BeforeAll
     static void setUpConfig() {
-        browser = System.getProperty("browser", "chrome");
-        browserSize = System.getProperty("browserSize", "1920x1080");
-        browserVersion = System.getProperty("browserVersion", "120.0");
-        baseUrl = "https://fundraiseup.com";
-        pageLoadStrategy = "eager";
-//        remote = "https://user1:1234@" + System.getProperty("wdHost", "selenoid.autotests.cloud") + "/wd/hub";
+        WebConfig webConfig = ConfigFactory.create(WebConfig.class, System.getProperties());
+
+        Configuration.baseUrl = "https://fundraiseup.com/";
+        Configuration.pageLoadStrategy = "eager";
+        Configuration.remote = webConfig.getRemoteUrl();
+        Configuration.browser = webConfig.getBrowserName();
+        Configuration.browserVersion = webConfig.getBrowserVersion();
+        Configuration.browserSize = webConfig.getBrowserSize();
+        Configuration.remote = webConfig.getRemoteUrl();
+        Configuration.timeout = 20000;
+        Configuration.pageLoadTimeout = 100000;
+        Configuration.pageLoadStrategy = "eager";
+
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(
                 "enableVNC", true,
