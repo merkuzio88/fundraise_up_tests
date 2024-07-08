@@ -18,7 +18,7 @@ public class SmokeTestsUI extends TestBase {
     CampaignPagesPage campaignPagesPage = new CampaignPagesPage();
     LoginPage loginPage = new LoginPage();
     LanguagesPage languagesPage = new LanguagesPage();
-    DocsChangelogPage docsChangelogPage = new DocsChangelogPage();
+    CheckoutPage checkoutPage = new CheckoutPage();
     PaypalRecurringPage paypalRecurringPage = new PaypalRecurringPage();
 
     @Test
@@ -44,7 +44,7 @@ public class SmokeTestsUI extends TestBase {
     @Test
     @Severity(BLOCKER)
     @DisplayName("Check error message with unsuccessful login attempt")
-    void checkErrorMessageWithUnsuccessfulLoginAttempt() {
+    void checkErrorMessageWithUnsuccessfulLoginAttemptTest() {
         loginPage.openLoginPage()
                 .fillRandomDataAndSubmitAttempt()
                 .checkErrorMessageWithUnsuccessfulLogin();
@@ -61,7 +61,7 @@ public class SmokeTestsUI extends TestBase {
     @Test
     @Severity(CRITICAL)
     @DisplayName("Check that number of languages in header corresponds to number of icons")
-    void checkNumberOfLanguagesInHeaderCorrespondsToNumberOfIcons() {
+    void checkNumberOfLanguagesInHeaderCorrespondsToNumberOfIconsTest() {
         languagesPage.openLanguagesPage()
                 .checkNumberOfLanguageIcons();
     }
@@ -69,16 +69,16 @@ public class SmokeTestsUI extends TestBase {
     @Test
     @Severity(CRITICAL)
     @DisplayName("Check that successful PayPal recurring request message equals to expected")
-    void checkSuccessfulPaypalRecurringRequestMessage() {
+    void checkSuccessfulPaypalRecurringRequestMessageTest() {
         paypalRecurringPage.openPaypalRecurringPage()
                 .fillRandomDataAndCheckPaypalRecurringRequestMessage();
     }
 
     @Test
     @Severity(CRITICAL)
-    @DisplayName("Check that successful subscribe to docs updates message equals to expected")
-    void checkSuccessfulSubscribeToDocsUpdatesMessage() {
-        docsChangelogPage.openDocsChangelogPage()
-                .checkSuccessfulSubscribeMessage();
+    @DisplayName("Check opening checkout widget window")
+    void checkOpeningCheckoutWidgetWindowTest() {
+        checkoutPage.openCheckoutPage()
+                .checkWidgetWindow();
     }
 }
