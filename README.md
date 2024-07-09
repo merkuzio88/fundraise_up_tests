@@ -39,29 +39,29 @@
 <a id="scenarios"></a>
 ## Test Scenarios
 ## UI
-* [x] Open vacancies page and check title
-* [x] Open corporate culture page and check title
-* [x] Open media page and check title
-* [x] Open referral page and check title
-* [x] Open first vacancy page and check title
-* [x] Open first vacancy respond modal and check error message when required fields not filled
-* [x] Load all vacancies cards and check that all cards displayed
+* [x] Open contact sales page and check title and talk to sales button
+* [x] Open features page and check title and explore campaign link
+* [x] Check error message with unsuccessful login attempt
+* [x] Check FAQ text display on campaign pages page
+* [x] Check that number of languages in header corresponds to number of icons
+* [x] Check that successful PayPal recurring request message equals to expected
+* [x] Check opening checkout widget window
 ## API
-* [x] Open vacancies page and check title
-* [x] Open corporate culture page and check title
-* [x] Open media page and check title
+* [x] Making unsuccessful login request without CSRF token
+* [x] Making request to subscribe product updates
+* [x] Making request to PayPal recurring
 ## Manual
-* [x] Open vacancies page and check title
-* [x] Open corporate culture page and check title
-* [x] Open media page and check title
+* [x] Checking the subscription for product updates
+* [x] Checking the opening of donor portal demo page
+* [x] Opening the job response page
 
 <a id="jenkins"></a>
 ## <img alt="Jenkins" height="25" src="./media/logo/Jenkins.svg" width="25"/></a><a name="CI/CD with Jenkins"></a>CI/CD with [Jenkins](https://jenkins.autotests.cloud/job/26-merkuzio88-automacon/)</a>
-<img alt="Jenkins" src="./media/reports/Jenkins.png"> 
+<img alt="Jenkins" src="./media/reports/jenkins.jpg"> 
 
 ### Jenkins parameters:
 
-- `TASK` (all tests will be launched by `automacon_tests` by default)
+- `TASK` (`ui_tests` or `api_tests`)
 - `BROWSER` (browser, `chrome` by default)
 - `BROWSER_VERSION` (version of browser, `122` by default)
 - `BROWSER_SIZE` (browser windows size, `1920x1080` by default)
@@ -72,7 +72,7 @@
 
 **Local launch:**
 ```bash  
-./gradlew clean automacon_tests
+./gradlew clean ui_tests
 ```
 
 **Remote Jenkins launch:**
@@ -82,7 +82,7 @@ clean ${TASK} -Dbrowser=${BROWSER} -DbrowserVersion=${BROWSER_VERSION} -Dbrowser
 
 <a id="allure"></a>
 ## <img alt="Allure" height="25" src="./media/logo/Allure.svg" width="25"/></a> <a name="Allure"></a>Allure [reporting](https://jenkins.autotests.cloud/job/26-merkuzio88-automacon/allure/)</a>
-<img alt="Allure" src="./media/reports/AllureReportExample.png"> 
+<img alt="Allure" src="./media/reports/AllureReportExample.jpg"> 
 
 `Allure` report includes:
 - Test steps
@@ -91,19 +91,19 @@ clean ${TASK} -Dbrowser=${BROWSER} -DbrowserVersion=${BROWSER_VERSION} -Dbrowser
 - Browser console logs
 - Video of execution for automated tests
 
-<img alt="Allure2" src="./media/reports/AllureReportExample2.png">
+<img alt="Allure2" src="./media/reports/AllureReportExample2.jpg">
 
 <a id="allure-testops"></a>
 ## <img alt="Allure" height="25" src="./media/logo/AllureTestOps.svg" width="25"/></a> Integration with <a target="_blank" href="https://allure.autotests.cloud/project/4210/dashboards">Allure TestOps</a>
 
 All test cases and execution results are available in `Allure TestOps`. Dashboard contains test runs statistics:
-<img alt="Dashboard" src="./media/reports/Dashboard.png">
+<img alt="Dashboard" src="./media/reports/Dashboard.jpg">
 
 Test cases:
-<img alt="Cases" src="./media/reports/Cases.png">
+<img alt="Cases" src="./media/reports/Cases.jpg">
 
 Launches:
-<img alt="Launch" src="./media/reports/Launches.png">
+<img alt="Launch" src="./media/reports/Launches.jpg">
 
 
 
@@ -112,12 +112,13 @@ Launches:
 
 `Jira` task has information about all created test cases, their statuses and test launches results from `Allure TestOps`:
 
-<img alt="JIRA" src="./media/reports/Jira.png">
+<img alt="JIRA" src="./media/reports/Jira.jpg">
 
 <a id="telegram"></a>
 ## <img alt="Telegram" height="25" src="./media/logo/Telegram.svg" width="25"/></a> Bot notifications in Telegram
 After every build Telegram bot sends notification with `Allure` report:
-<img alt="Bot" src="./media/reports/bot.png"> 
+
+<img alt="Bot" src="./media/reports/Bot.jpg"> 
 
 <a id="video"></a>
 ## <img alt="Selenoid" height="25" src="./media/logo/Selenoid.svg" width="25"/></a> Example of test execution
