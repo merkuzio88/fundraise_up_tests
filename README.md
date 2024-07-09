@@ -56,7 +56,7 @@
 * [x] Opening the job response page
 
 <a id="jenkins"></a>
-## <img alt="Jenkins" height="25" src="./media/logo/Jenkins.svg" width="25"/></a><a name="CI/CD with Jenkins"></a>CI/CD with [Jenkins](https://jenkins.autotests.cloud/job/26-merkuzio88-automacon/)</a>
+## <img alt="Jenkins" height="25" src="./media/logo/Jenkins.svg" width="25"/></a><a name="CI/CD with Jenkins"></a>CI/CD with [Jenkins](https://jenkins.autotests.cloud/job/26-merkuzio88-fundraise_up/)</a>
 <img alt="Jenkins" src="./media/reports/jenkins.jpg"> 
 
 ### Jenkins parameters:
@@ -81,7 +81,7 @@ clean ${TASK} -Dbrowser=${BROWSER} -DbrowserVersion=${BROWSER_VERSION} -Dbrowser
 ```
 
 <a id="allure"></a>
-## <img alt="Allure" height="25" src="./media/logo/Allure.svg" width="25"/></a> <a name="Allure"></a>Allure [reporting](https://jenkins.autotests.cloud/job/26-merkuzio88-automacon/allure/)</a>
+## <img alt="Allure" height="25" src="./media/logo/Allure.svg" width="25"/></a> <a name="Allure"></a>Allure [reporting](https://jenkins.autotests.cloud/job/26-merkuzio88-fundraise_up/allure/)</a>
 <img alt="Allure" src="./media/reports/AllureReportExample.jpg"> 
 
 `Allure` report includes:
@@ -94,7 +94,7 @@ clean ${TASK} -Dbrowser=${BROWSER} -DbrowserVersion=${BROWSER_VERSION} -Dbrowser
 <img alt="Allure2" src="./media/reports/AllureReportExample2.jpg">
 
 <a id="allure-testops"></a>
-## <img alt="Allure" height="25" src="./media/logo/AllureTestOps.svg" width="25"/></a> Integration with <a target="_blank" href="https://allure.autotests.cloud/project/4210/dashboards">Allure TestOps</a>
+## <img alt="Allure" height="25" src="./media/logo/AllureTestOps.svg" width="25"/></a> Integration with <a target="_blank" href="https://allure.autotests.cloud/project/4320/dashboards">Allure TestOps</a>
 
 All test cases and execution results are available in `Allure TestOps`. Dashboard contains test runs statistics:
 <img alt="Dashboard" src="./media/reports/Dashboard.jpg">
@@ -108,7 +108,7 @@ Launches:
 
 
 <a id="jira"></a>
-## <img alt="Jira" height="25" src="./media/logo/JIRA.svg" width="25"/></a> Integration with <a target="_blank" href="https://jira.autotests.cloud/browse/HOMEWORK-1208">Jira</a>
+## <img alt="Jira" height="25" src="./media/logo/JIRA.svg" width="25"/></a> Integration with <a target="_blank" href="https://jira.autotests.cloud/browse/HOMEWORK-1293">Jira</a>
 
 `Jira` task has information about all created test cases, their statuses and test launches results from `Allure TestOps`:
 
