@@ -10,8 +10,14 @@ import lombok.With;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class ContactFieldsModel {
+public class SubscribeStatusRequestModel {
+
+    @With
+    private Boolean email_otp_verify_flow;
 
     @With
     private String email;
+
+    @With
+    private Boolean captcha_error;
 }

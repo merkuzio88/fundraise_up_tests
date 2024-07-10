@@ -14,7 +14,7 @@ public class Specs {
             .filter(withCustomTemplates())
             .log().all();
 
-    public static ResponseSpecification loginResponseSpecWith403 = new ResponseSpecBuilder()
+    public static ResponseSpecification responseSpecWith403 = new ResponseSpecBuilder()
             .expectStatusCode(403)
             .log(ALL)
             .build();
@@ -24,8 +24,13 @@ public class Specs {
             .log(ALL)
             .build();
 
-    public static ResponseSpecification recurringResponseSpec = new ResponseSpecBuilder()
+    public static ResponseSpecification successfulResponseSpec = new ResponseSpecBuilder()
             .expectStatusCode(200)
+            .log(ALL)
+            .build();
+
+    public static ResponseSpecification subscribeStatusResponseSpec = new ResponseSpecBuilder()
+            .expectStatusCode(400)
             .log(ALL)
             .build();
 }

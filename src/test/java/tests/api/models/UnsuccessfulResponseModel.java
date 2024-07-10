@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class UnsuccessfulLoginResponseModel {
+public class UnsuccessfulResponseModel {
 
     private String message;
 }
