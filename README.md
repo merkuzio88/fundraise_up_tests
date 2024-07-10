@@ -50,6 +50,8 @@
 * [x] Making unsuccessful login request without CSRF token
 * [x] Making request to subscribe product updates
 * [x] Making request to PayPal recurring
+* [x] Making unsuccessful subscribe status request
+* [x] Making unsuccessful password reset request
 ## Manual
 * [x] Checking the subscription for product updates
 * [x] Checking the opening of donor portal demo page
