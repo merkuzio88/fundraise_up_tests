@@ -19,17 +19,17 @@ public class Specs {
             .log(ALL)
             .build();
 
-    public static ResponseSpecification subscribeResponseSpec = new ResponseSpecBuilder()
+    public static ResponseSpecification subscribeResponseSpecWith204 = new ResponseSpecBuilder()
             .expectStatusCode(204)
             .log(ALL)
             .build();
 
-    public static ResponseSpecification successfulResponseSpec = new ResponseSpecBuilder()
+    public static ResponseSpecification successfulResponseSpecWith200 = new ResponseSpecBuilder()
             .expectStatusCode(200)
             .log(ALL)
             .build();
 
-    public static ResponseSpecification subscribeStatusResponseSpec = new ResponseSpecBuilder()
+    public static ResponseSpecification subscribeStatusResponseSpecWith400 = new ResponseSpecBuilder()
             .expectStatusCode(400)
             .log(ALL)
             .build();

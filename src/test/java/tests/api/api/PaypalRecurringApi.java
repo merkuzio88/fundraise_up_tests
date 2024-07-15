@@ -16,7 +16,7 @@ public class PaypalRecurringApi {
                 .when()
                 .post("https://api.tally.so/forms/3X5r6g/respond")
                 .then()
-                .spec(successfulResponseSpec)
+                .spec(successfulResponseSpecWith200)
                 .extract().as(RecurringResponseModel.class);
     }
 }

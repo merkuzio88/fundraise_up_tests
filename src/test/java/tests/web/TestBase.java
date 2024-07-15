@@ -44,7 +44,7 @@ public class TestBase {
     }
 
     @AfterEach
-    void afterEach() {
+    void addAttachments() {
         screenshotAs("Last screenshot");
         pageSource();
         browserConsoleLogs();

@@ -15,6 +15,6 @@ public class SubscribeUpdatesApi {
                 .when()
                 .post("https://forms.hscollectedforms.net/collected-forms/submit/form")
                 .then()
-                .spec(subscribeResponseSpec);
+                .spec(subscribeResponseSpecWith204);
     }
 }

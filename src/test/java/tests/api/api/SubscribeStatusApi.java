@@ -17,7 +17,7 @@ public class SubscribeStatusApi {
                 .when()
                 .post("https://status.fundraiseup.com/subscriptions/new-email")
                 .then()
-                .spec(subscribeStatusResponseSpec)
+                .spec(subscribeStatusResponseSpecWith400)
                 .extract().as(UnsuccessfulSubscribeResponseModel.class);
     }
 }
